@@ -1,21 +1,28 @@
-
-
-form {
-  margin: auto;
+.name-card {
   justify-content: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  background-color: #4e6d4b;
+  margin: 5rem auto;
   width: 35rem;
   max-width: 90%;
 }
 
-label {
+.name-card form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name-card label {
   color: #fff;
 }
 
-input {
+.name-card input {
   color: #2b2d2f;
 }
 
-.name-card__button {
+.name-card button {
   width: 100%;
   background-image: linear-gradient(#1e4612, #2b3b2a);
   border: 1px solid hsl(124, 31%, 18%);
@@ -26,21 +33,13 @@ input {
   margin-top: 4px;
 }
 
-.name-card__button :focus {
+.name-card button :focus {
   outline: none;
 }
 
-.name-card__button:hover,
-.name-card__button:active {
+.name-card button:hover,
+.name-card button:active {
   background: #2d7018;
   border-color: #286410;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
-}
-
-.name-card {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-  margin: 1rem 0;
-  background-color: #4e6d4b;
 }
