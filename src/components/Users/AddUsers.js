@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import Styles from './AddUsers.module.css';
 
 const AddUser = props => {
+    // define constants for state items
+const [enteredUsername, setEnteredUsername] = useState('');
+
     const AddUserHandler = (event) => {
         event.preventDefault();
     };
