@@ -4,7 +4,8 @@ import Styles from './Button.module.css';
 
 const Button = props => {
     return (
-        <button type={props.type} className={Styles.button} onClick={props.onClick}>{props.children}</button>
+        // added fallback type for button 
+        <button type={props.type || 'button'} className={Styles.button} onClick={props.onClick}>{props.children}</button>
     );
 };
 
