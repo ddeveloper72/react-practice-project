@@ -11,6 +11,14 @@ const AddUser = props => {
     const AddUserHandler = (event) => {
         event.preventDefault();
         console.log(enteredName, enteredAge);
+        // add data validation with user feedback
+        if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
+            alert('Inputs cannot be blank')
+            return;
+        } if (+enteredAge < 0) {
+            alert('Age must be greater than 0')
+            return;
+        }
 
         // reset form once the submit button is clicked
         setEnteredName('');
