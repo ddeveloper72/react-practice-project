@@ -10,6 +10,11 @@ const AddUser = props => {
 
     const AddUserHandler = (event) => {
         event.preventDefault();
+        console.log(enteredName, enteredAge);
+
+        // reset form once the submit button is clicked
+        setEnteredName('');
+        setEnteredAge('');
     };
 
     // define functions for setting the new values from inputs
@@ -25,9 +30,9 @@ const AddUser = props => {
         <Card className={`${Styles['name-card']}`}>
             <form onSubmit={AddUserHandler}>
                 <label htmlFor="name">Name:</label>
-                <input id="name" type="text" onChange={nameChangeHandler}></input>
+                <input id="name" type="text" value={enteredName} onChange={nameChangeHandler}></input>
                 <label htmlFor="age">Age (years)</label>
-                <input id="age" type="number" onChange={ageChangeHandler}></input>
+                <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler}></input>
                 <Button type="submit">Add Goal</Button>
             </form>
         </Card>
