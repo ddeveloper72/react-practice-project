@@ -7,7 +7,9 @@ function App() {
   return (
     <div>
       <AddUser />
-      <UserList />
+      {/* render list with and empty starting array */}
+      <UserList users={[]} />
+
     </div>
 
   );
