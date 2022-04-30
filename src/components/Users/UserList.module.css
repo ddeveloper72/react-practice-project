@@ -1,16 +1,23 @@
  .users {
   margin: 2rem auto;
-  width: 90%;
-  max-width: 40rem;
+  padding: 0.5rem;
+  background-color: #4e6d4b;
+  width: 35rem;
+  max-width: 90%;
+}
+
+.users label {
+  color: #fff;
 }
 
 .users ul {
   list-style: none;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .users li {
   border: 1px solid #ccc;
+  background-color: #f8faf8;
   margin: 0.5rem 0;
   padding: 0.5rem;
 }
