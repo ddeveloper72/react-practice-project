@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import AddUser from './components/Users/AddUsers';
 import UserList from './components/Users/UserList';
 
@@ -11,13 +11,14 @@ function App() {
     // expect 2 arguments, name and age
     setUserList((prevUserList) => {
       // get the previous userList then add the new user to the list array
-      return [...prevUserList, { name: userName, age: userAge }];
+      // add key to each user item
+      return [...prevUserList, { name: userName, age: userAge, id: Math.random().toString() }];
     });
   };
 
   return (
     <div>
-      <AddUser onAddUser={AddUserHandler}/>
+      <AddUser onAddUser={AddUserHandler} />
       {/* render list with and empty starting array */}
       <UserList users={userList} />
 
