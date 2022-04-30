@@ -10,8 +10,8 @@ function App() {
   const AddUserHandler = (userName, userAge) => {
     // expect 2 arguments, name and age
     setUserList((prevUserList) => {
-      // get the previous userList
-      return [...prevUserList];
+      // get the previous userList then add the new user to the list array
+      return [...prevUserList, { name: userName, age: userAge }];
     });
   };
 
