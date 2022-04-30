@@ -20,8 +20,9 @@ const AddUser = props => {
         }
 
         // execute onAddUser function passed from App.js via props
-        props.onAddUser();
-        
+        // pass in the the 2 data elements, name and age
+        props.onAddUser(enteredName, enteredAge);
+
         // reset form once the submit button is clicked
         setEnteredName('');
         setEnteredAge('');
