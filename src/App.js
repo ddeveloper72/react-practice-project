@@ -9,6 +9,10 @@ function App() {
 
   const AddUserHandler = (userName, userAge) => {
     // expect 2 arguments, name and age
+    setUserList((prevUserList) => {
+      // get the previous userList
+      return [...prevUserList];
+    });
   };
 
   return (
