@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import Styles from './AddUsers.module.css';
+import ErrorModal from "../UI/ErrorModal";
 
 const AddUser = props => {
     // define constants for state items
@@ -38,16 +39,20 @@ const AddUser = props => {
     };
 
     return (
-        <Card className={`${Styles['name-card']}`}>
-            <form onSubmit={AddUserHandler}>
-                <label htmlFor="name">Name:</label>
-                <input id="name" type="text" value={enteredName} onChange={nameChangeHandler}></input>
-                <label htmlFor="age">Age (years)</label>
-                <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler}></input>
-                <Button type="submit">Add Goal</Button>
-            </form>
-        </Card>
+        <div>
+            <ErrorModal />
+            <Card className={`${Styles['name-card']}`}>
+                <form onSubmit={AddUserHandler}>
+                    <label htmlFor="name">Name:</label>
+                    <input id="name" type="text" value={enteredName} onChange={nameChangeHandler}></input>
+                    <label htmlFor="age">Age (years)</label>
+                    <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler}></input>
+                    <Button type="submit">Add Goal</Button>
+                </form>
+            </Card>
+        </div>
     );
+
 };
 
 export default AddUser;
