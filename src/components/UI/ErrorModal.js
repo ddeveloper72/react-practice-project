@@ -7,7 +7,7 @@ const ErrorModal = props => {
 
     return (
         <div>
-            <div className={Styles.backdrop} />
+            <div className={Styles.backdrop} onClick={props.onErrorConfirm}/>
             <Card className={Styles.modal}>
                 <header className={Styles.header}>
                     <h2>{props.title}</h2>
@@ -16,7 +16,7 @@ const ErrorModal = props => {
                     <p>{props.message}</p>
                 </div>
                 <footer className={Styles.actions}>
-                    <Button>Ok</Button>
+                    <Button onClick={props.onErrorConfirm}>Ok</Button>
                 </footer>
             </Card>
         </div>
