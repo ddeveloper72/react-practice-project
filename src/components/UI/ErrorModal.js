@@ -1,5 +1,14 @@
- import React from "react";
+import React from "react";
+import Card from "./Card";
 
- const ErrorModal = props => {};
+const ErrorModal = props => {
 
- export default ErrorModal;
+    return <Card>
+        
+
+
+    </Card>
+};
+
+
+export default ErrorModal;
