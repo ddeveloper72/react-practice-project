@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import Button from "./Button";
 
 const ErrorModal = props => {
 
@@ -11,7 +12,7 @@ const ErrorModal = props => {
             <p></p>
         </div>
         <footer>
-
+            <Button>Ok</Button>
         </footer>
     </Card>
 };
