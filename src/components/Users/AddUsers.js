@@ -16,24 +16,22 @@ const AddUser = props => {
         event.preventDefault();
         // add data validation with user feedback
         if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
-            alert('Inputs cannot be blank')
             setError(
                 {
                     title: 'Invalid input',
-                    message: 'Please enter a valid name and age (not an empty value).'
+                    message: 'Please enter a valid name and age (not an empty value).',
                 }
             );
             return;
-        } if (+enteredAge < 0) {
-            alert('Age must be greater than 0')
+        } if (+enteredAge < 1) {
             setError(
                 {
                     title: 'Invalid age',
-                    message: 'Please enter a valid age (greater than 0).'
+                    message: 'Please enter a valid age (greater than 0).',
                 }
             );
             return;
-        }
+        };
 
         // execute onAddUser function passed from App.js via props
         // pass in the the 2 data elements, name and age
@@ -55,7 +53,7 @@ const AddUser = props => {
 
     return (
         <div>
-            <ErrorModal title="An Error has occurred" message="Something has gone wrong!" />
+            {error && <ErrorModal title={error.title} message={error.message} />}
             <Card className={`${Styles['name-card']}`}>
                 <form onSubmit={AddUserHandler}>
                     <label htmlFor="name">Name:</label>
