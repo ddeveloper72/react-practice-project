@@ -9,11 +9,20 @@ const AddUser = props => {
     const [enteredName, setEnteredName] = useState('');
     const [enteredAge, setEnteredAge] = useState('');
 
+    // error management
+    const [error, setError] = useState();
+
     const AddUserHandler = (event) => {
         event.preventDefault();
         // add data validation with user feedback
         if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
             alert('Inputs cannot be blank')
+            setError(
+                {
+                    title: 'Invalid input',
+                    message: 'Please enter a valid name and age (note empty values).'
+                }
+            );
             return;
         } if (+enteredAge < 0) {
             alert('Age must be greater than 0')
@@ -40,7 +49,7 @@ const AddUser = props => {
 
     return (
         <div>
-            <ErrorModal title="An Error has occurred" message="Something has gone wrong!"/>
+            <ErrorModal title="An Error has occurred" message="Something has gone wrong!" />
             <Card className={`${Styles['name-card']}`}>
                 <form onSubmit={AddUserHandler}>
                     <label htmlFor="name">Name:</label>
