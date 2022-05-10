@@ -51,6 +51,11 @@ const AddUser = props => {
         setEnteredAge(event.target.value);
     };
 
+    // set error to nothing
+    const errorHandler = () => {
+        setError(null);
+    }
+
     return (
         <div>
             {error && <ErrorModal title={error.title} message={error.message} />}
