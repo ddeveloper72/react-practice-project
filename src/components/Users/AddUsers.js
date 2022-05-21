@@ -41,8 +41,10 @@ const AddUser = props => {
         // pass in the the 2 data elements, name and age
         props.onAddUser(refUserName, refUserAge);
 
-        // reset form once the submit button is clicked
-       
+        // reset form once the submit button is clicked by updating the ref
+        nameInputRef.current.value = '';
+        ageInputRef.current.value = '';
+
     };
 
     // set error to nothing
