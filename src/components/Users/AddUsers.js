@@ -68,7 +68,7 @@ const AddUser = props => {
                     <label htmlFor="name">Name:</label>
                     <input id="name" type="text" value={enteredName} onChange={nameChangeHandler} ref={nameInputRef}></input>
                     <label htmlFor="age">Age (years)</label>
-                    <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler}></input>
+                    <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler} ref={ageInputRef}></input>
                     <Button type="submit">Add Goal</Button>
                 </form>
             </Card>
