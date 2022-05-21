@@ -19,7 +19,8 @@ const AddUser = props => {
     const AddUserHandler = (event) => {
         event.preventDefault();
         const enteredName = nameInputRef.current.value;
-        
+        const enteredAge = ageInputRef.current.value;
+
         // add data validation with user feedback
         if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
             setError(
