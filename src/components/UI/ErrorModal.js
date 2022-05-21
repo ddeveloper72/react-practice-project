@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import Button from "./Button";
 import Styles from "./ErrorModal.module.css";
+import ReactDom from 'react-dom';
 
 const Backdrop = props => {
     return <div className={Styles.backdrop} onClick={props.onErrorConfirm} />
@@ -25,7 +26,7 @@ const ErrorModal = props => {
 
     return (
         <React.Fragment>
-            
+            {ReactDom.createPortal(<Backdrop />)}
         </React.Fragment>
     )
 };
