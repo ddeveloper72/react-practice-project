@@ -26,6 +26,7 @@ const ErrorModal = props => {
 
     return (
         <React.Fragment>
+            {/* use std javascript to render the JSX code to the dom element portals identified by ID */}
             {ReactDom.createPortal(
                 <Backdrop onErrorConfirm={props.onErrorConfirm} />,
                 document.getElementById('backdrop-root')
