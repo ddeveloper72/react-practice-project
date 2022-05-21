@@ -22,7 +22,7 @@ const AddUser = props => {
         const refUserAge = ageInputRef.current.value;
 
         // add data validation with user feedback
-        if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
+        if (refUserName.trim().length === 0 || refUserAge.trim().length === 0) {
             setError(
                 {
                     title: 'Invalid input',
@@ -30,7 +30,7 @@ const AddUser = props => {
                 }
             );
             return;
-        } if (+enteredAge < 1) {
+        } if (+refUserAge < 1) {
             setError(
                 {
                     title: 'Invalid age',
@@ -42,7 +42,7 @@ const AddUser = props => {
 
         // execute onAddUser function passed from App.js via props
         // pass in the the 2 data elements, name and age
-        props.onAddUser(enteredName, enteredAge);
+        props.onAddUser(refUserName, refUserAge);
 
         // reset form once the submit button is clicked
         setEnteredName('');
