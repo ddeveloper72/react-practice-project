@@ -17,12 +17,12 @@ function App() {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <AddUser onAddUser={AddUserHandler} />
       {/* render list with and empty starting array */}
       <UserList users={userList} />
 
-    </div>
+    </React.Fragment>
 
   );
 }
