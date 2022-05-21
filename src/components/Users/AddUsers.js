@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import Button from "../UI/Button";
 import Styles from './AddUsers.module.css';
 import ErrorModal from "../UI/ErrorModal";
+import Wrapper from "../Helpers/Wrappers";
 
 const AddUser = props => {
     // define constants for state items
@@ -57,7 +58,7 @@ const AddUser = props => {
     }
 
     return (
-        <div>
+        <Wrapper>
             {error && <ErrorModal title={error.title} message={error.message} onErrorConfirm={errorHandler}/>}
             <Card className={`${Styles['name-card']}`}>
                 <form onSubmit={AddUserHandler}>
@@ -68,7 +69,7 @@ const AddUser = props => {
                     <Button type="submit">Add Goal</Button>
                 </form>
             </Card>
-        </div>
+        </Wrapper>
     );
 
 };
