@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import Styles from './AddUsers.module.css';
@@ -6,6 +6,8 @@ import ErrorModal from "../UI/ErrorModal";
 import Wrapper from "../Helpers/Wrappers";
 
 const AddUser = props => {
+    useRef();
+    
     // define constants for state items
     const [enteredName, setEnteredName] = useState('');
     const [enteredAge, setEnteredAge] = useState('');
