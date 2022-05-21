@@ -6,8 +6,9 @@ import ErrorModal from "../UI/ErrorModal";
 import Wrapper from "../Helpers/Wrappers";
 
 const AddUser = props => {
-    useRef();
-    
+    const nameInputRef = useRef();
+    const ageInputRef = useRef();
+
     // define constants for state items
     const [enteredName, setEnteredName] = useState('');
     const [enteredAge, setEnteredAge] = useState('');
