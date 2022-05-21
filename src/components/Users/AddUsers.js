@@ -6,12 +6,9 @@ import ErrorModal from "../UI/ErrorModal";
 import Wrapper from "../Helpers/Wrappers";
 
 const AddUser = props => {
+    // define constants for state Ref items
     const nameInputRef = useRef();
     const ageInputRef = useRef();
-
-    // define constants for state items
-    const [enteredName, setEnteredName] = useState('');
-    const [enteredAge, setEnteredAge] = useState('');
 
     // error management
     const [error, setError] = useState();
@@ -45,17 +42,7 @@ const AddUser = props => {
         props.onAddUser(refUserName, refUserAge);
 
         // reset form once the submit button is clicked
-        setEnteredName('');
-        setEnteredAge('');
-    };
-
-    // define functions for setting the new values from inputs
-    const nameChangeHandler = (event) => {
-        setEnteredName(event.target.value);
-    };
-
-    const ageChangeHandler = (event) => {
-        setEnteredAge(event.target.value);
+       
     };
 
     // set error to nothing
@@ -69,9 +56,9 @@ const AddUser = props => {
             <Card className={`${Styles['name-card']}`}>
                 <form onSubmit={AddUserHandler}>
                     <label htmlFor="name">Name:</label>
-                    <input id="name" type="text" value={enteredName} onChange={nameChangeHandler} ref={nameInputRef}></input>
+                    <input id="name" type="text" ref={nameInputRef}></input>
                     <label htmlFor="age">Age (years)</label>
-                    <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler} ref={ageInputRef}></input>
+                    <input id="age" type="number" ref={ageInputRef}></input>
                     <Button type="submit">Add Goal</Button>
                 </form>
             </Card>
