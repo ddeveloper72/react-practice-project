@@ -66,7 +66,7 @@ const AddUser = props => {
             <Card className={`${Styles['name-card']}`}>
                 <form onSubmit={AddUserHandler}>
                     <label htmlFor="name">Name:</label>
-                    <input id="name" type="text" value={enteredName} onChange={nameChangeHandler}></input>
+                    <input id="name" type="text" value={enteredName} onChange={nameChangeHandler} ref={nameInputRef}></input>
                     <label htmlFor="age">Age (years)</label>
                     <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler}></input>
                     <Button type="submit">Add Goal</Button>
