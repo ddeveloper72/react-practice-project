@@ -18,6 +18,7 @@ const AddUser = props => {
 
     const AddUserHandler = (event) => {
         event.preventDefault();
+        console.log(nameInputRef.current.value);
         // add data validation with user feedback
         if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
             setError(
@@ -62,7 +63,7 @@ const AddUser = props => {
 
     return (
         <Wrapper>
-            {error && <ErrorModal title={error.title} message={error.message} onErrorConfirm={errorHandler}/>}
+            {error && <ErrorModal title={error.title} message={error.message} onErrorConfirm={errorHandler} />}
             <Card className={`${Styles['name-card']}`}>
                 <form onSubmit={AddUserHandler}>
                     <label htmlFor="name">Name:</label>
